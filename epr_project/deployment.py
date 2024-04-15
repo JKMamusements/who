@@ -3,7 +3,7 @@ from .settings import *
 from .settings import BASE_DIR
 
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME'], "https://jkmweb.azurewebsites.net", "jkmweb.azurewebsites.net",
-                 "http://jkmweb.azurewebsites.net/"]
+                 "http://jkmweb.azurewebsites.net"]
 
 CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']]
 
