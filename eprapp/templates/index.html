@@ -1,0 +1,17 @@
+<!-- eprapp/templates/index.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <h2>Welcome to EPR Project!</h2>
+    <p>This is the home page of our project.</p>
+    <img src="{% static "Shubham_singh.jpg" %}" alt="#">
+    {% if home_page_content %}
+        <div>{{ home_page_content.content }}</div>
+    {% else %}
+        <p>No content available.</p>
+    {% endif %}
+
+    {% endblock %}

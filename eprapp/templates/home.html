@@ -1,0 +1,13 @@
+<!-- eprapp/templates/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <h2>Welcome to EPR Project!</h2>
+    {% if home_page_content %}
+        <div>{{ home_page_content.content }}</div>
+    {% else %}
+        <p>No content available.</p>
+    {% endif %}
+{% endblock %}
