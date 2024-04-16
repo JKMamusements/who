@@ -7,6 +7,8 @@ from django.http import HttpResponse
 ####################################
 ######## Authentications ###########
 from django.contrib.auth import login, authenticate
+from django.views.decorators.csrf import csrf_protect
+
 ####################################
 
 ####################################
@@ -40,7 +42,7 @@ def index(request):
 
     return render(request, 'index.html', {'home_page_content': home_page_content})
 
-
+@csrf_protect
 def signup(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
