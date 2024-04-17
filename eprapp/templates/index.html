@@ -156,7 +156,192 @@
         </div>
       </section>
 
+<!-- 
+        - #stand SEARCH
+      -->
 
+      <section class="stand-search">
+        <div class="container">
+          <form action="" class="stand-search-form">
+            <div class="input-wrapper">
+              <label for="upcoming" class="input-label"
+                >Search location*</label
+              >
+
+              <input
+                type="text"
+                name="upcoming"
+                id="upcoming"
+                required
+                placeholder="Enter location"
+                class="input-field"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="people" class="input-label"
+                >Number of Stands*</label
+              >
+
+              <input
+                type="number"
+                name="people"
+                id="people"
+                required
+                placeholder="No.of Stands"
+                class="input-field"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="checkin" class="input-label">Checkin Date**</label>
+
+              <input
+                type="date"
+                name="checkin"
+                id="checkin"
+                required
+                class="input-field"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="checkout" class="input-label">Checkout Date*</label>
+
+              <input
+                type="date"
+                name="checkout"
+                id="checkout"
+                required
+                class="input-field"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-secondary">
+              Inquire now
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- 
+      - #POPULAR
+    -->
+
+      <section class="popular" id="upcoming">
+        <div class="container">
+          <p class="section-subtitle">Upcoming Mela's</p>
+
+          <h2 class="h2 section-title">Current Event</h2>
+
+          <p class="section-text">
+            "Get ready for the biggest events! 🎉 Thrills, fun, and memories
+            await. Stay tuned for updates! 🌟 #ExcitingTimesAhead"
+          </p>
+
+          <ul class="popular-list">
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img
+                    src=" {% static "assets/images/MelaPic1.jpg" %}"
+                    alt="Mela Pic 1"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Delhi</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Pashchim Vihar</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Dubai Theme Carnival Plus Fish Tunnel
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img
+                    src="./assets/images/MelaPic2.jpg"
+                    alt="MelaPic2"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">uttar pradesh</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Hockey Ground Kuferganj Rampur</a>
+                  </h3>
+
+                  <p class="card-text">Dubai Theme Carnival</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img
+                    src="./assets/images/MelaPic3.jpg"
+                    alt="ela pic 3"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">uttar pradesh</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Near Sangam Prayagraj</a>
+                  </h3>
+
+                  <p class="card-text">Dubai Theme Carnival Fish Tunnel.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <button class="btn btn-primary">More locations</button>
+        </div>
+      </section>
     
 
 
