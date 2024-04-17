@@ -26,9 +26,7 @@ SECRET_KEY = 'django-insecure-tsn9x-6f#60t6rnu1jw(23bh(x%ua#i@d(4u1t=!=l3u7z5u-x
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
-CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME'],'https://'+ "www.jkmevents.in"]
-
+CSRF_TRUSTED_ORIGINS = ["*"]
 
 # Application definition
 
@@ -40,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'eprapp',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
