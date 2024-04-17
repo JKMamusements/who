@@ -2,9 +2,9 @@ import os
 from .settings import *
 from .settings import BASE_DIR
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", "https://www.jkmevents.in"]
 
-CSRF_TRUSTED_ORIGINS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["*", "https://www.jkmevents.in"]
 
 DEBUG = True
 
