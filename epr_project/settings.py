@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-tsn9x-6f#60t6rnu1jw(23bh(x%ua#i@d(4u1t=!=l3u7z5u-x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*", "https://www.jkmevents.in"]
-CSRF_TRUSTED_ORIGINS = ["*", "https://www.jkmevents.in"]
+ALLOWED_HOSTS = ["http://127.0.0.1:8000/", "127.0.0.1", "https://www.jkmevents.in"]
+CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8000/", "https://www.jkmevents.in"]
 
 
 # Application definition

@@ -1,0 +1,11 @@
+<!-- templates/user_dashboard.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome, {{ full_name }}!</h1>
+<h1>Welcome, {{ username }}!</h1>
+
+<p>This is your dashboard. More features will be added here to display your stats.</p>
+<a href="{% url 'update_profile' %}">Update Your Profile</a>
+<a href="{% url 'signout' %}">Sign Out</a>
+{% endblock %}
