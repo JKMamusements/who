@@ -19,6 +19,7 @@
   --jet: hsl(0, 0%, 20%);
   --red: hsl(0, 86%, 51%);
   --dark-red:rgb(174, 45, 82);
+  --golden : #FFD700;
  
   --ff-poppins: "Poppins", sans-serif;
   --ff-montserrat: "Montserrat", sans-serif;
@@ -511,7 +512,7 @@ body { background: var(--white); }
 }
 
 
-.popular { padding-block: var(--section-padding); }
+.popular { padding-block: 5px; }
 
 .popular-list,
 .popular-list > li:not(:last-child) { margin-bottom: 30px; }
@@ -536,15 +537,15 @@ body { background: var(--white); }
   bottom: 20px;
   left: 20px;
   right: 20px;
-  background: var(--white);
+  background: var(--cultured);
   border-radius: var(--radius-25);
   padding: 20px;
 }
 
 
 .popular-card .card-rating {
-  background: var(--bright-navy-blue);
-  color: var(--white);
+  background: var(--black);
+  color: var(--golden);
   position: absolute;
   top: 0;
   right: 25px;
@@ -1303,4 +1304,130 @@ address {
 
   .container { max-width: 1180px; }
 
+}
+
+.stylist-blog {
+  background-color: var(--white);
+  padding: 20px;
+  text-align: center;
+  
+}
+
+.stylist-blog h2 {
+  margin-bottom: 20px;
+}
+
+.carousel-container {
+  display: flex; /* Center articles horizontally */
+  justify-content: space-between;
+  align-items: center; /* Align controls and articles vertically */
+  padding: 25px 60px; /* Add padding to ensure space around for the buttons */
+  box-sizing: border-box;
+  overflow: hidden; /* Hide overflow when articles are too wide */
+  position: relative; /* Required for absolute positioning of buttons */
+}
+
+.carousel-wrapper {
+  display: flex;
+  justify-content:space-between;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform; /* Improves performance for smooth scrolling */
+  
+}
+
+.blog-post {
+  /* flex: 0 0 33.33%; /* Set width for each blog post */
+   
+  padding:10px;
+  border: solid 1px rgb(22, 20, 19);
+  
+  border-radius: var(--radius-25);
+  margin: 0 10px;
+  text-align: center; /* Reset text alignment if needed */
+ /*  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1); */
+  height: 100%;
+  width: 370px;
+}
+
+.blog-post img {
+  padding: 5%;
+  border-radius: var(--radius-25);
+  box-shadow: 1px 1px 4px 3px rgba(0.1, 0.1, 0.1, 0.1);
+  width: 100%;
+  height: 350px;
+  display: block;
+}
+
+.blog-post h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.blog-post p {
+  margin-bottom: 10px;
+}
+
+.blog-post a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.carousel-control {
+  background-color: #ddd;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+  position: absolute; /* Position buttons absolutely */
+  top: 50%; /* Center buttons vertically */
+  transform: translateY(-50%); /* Offset buttons from center */
+  z-index: 2; /* Ensure buttons appear on top of carousel content */
+}
+
+.carousel-control:hover {
+  opacity: 1;
+}
+
+.carousel-control.prev {
+  left: 0; /* Place button on left side */
+}
+
+.carousel-control.next {
+  right: 0; /* Place button on right side */
+}
+
+
+
+@media (max-width: 768px) {
+  .blog-post {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-post {
+    flex: 100%; /* Make articles stack vertically on mobile */
+  }
+  .carousel-control {
+    top: calc(50% - 25px); /* Adjust button position for mobile */
+  }
+
+  .blog-post {
+   width: 250px;
+   margin-right: 1%;
+   margin-left: 1%;
+   
+   height: fit-content;
+  }
+
+  .blog-post img {
+    width: 100%;
+    height: 60%;
+    display:block;
+  }
+  
 }
