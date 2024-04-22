@@ -1,566 +1,823 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jkm Amusements</title>
 
-    
     <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body id="top">
-
+  <body id="top">
     <header class="header" data-header>
+      <div class="overlay" data-overlay></div>
 
-        <div class="overlay" data-overlay></div>
-    
-        <div class="header-top">
-          <div class="container">
-    
-            <a href="tel:+91 0000 1111 99" class="helpline-box">
-    
-              <div class="icon-box">
-                <ion-icon name="call-outline"></ion-icon>
-              </div>
-    
-              <div class="wrapper">
-                <p class="helpline-title">For Further Inquires :</p>
-    
-                <p class="helpline-number">+91 0000 1111 99</p>
-              </div>
-    
-            </a>
-    
-            <a href="#" class="logo">
-              <img src="{% static "assets/images/make-a-logo.svg" %}" alt="jkmAmusements logo">
-            </a>
-    
-            <div class="header-btn-group">
-    
-              <button class="search-btn" aria-label="Search">
-                <ion-icon name="search"></ion-icon>
-              </button>
-    
-              <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-                <ion-icon name="menu-outline"></ion-icon>
-              </button>
-    
+      <div class="header-top">
+        <div class="container">
+          <a href="tel:+91 0000 1111 99" class="helpline-box">
+            <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
             </div>
-    
+
+            <div class="wrapper">
+              <p class="helpline-title">For Further Inquires :</p>
+
+              <p class="helpline-number">+91 0000 1111 99</p>
+            </div>
+          </a>
+
+          <a href="#" class="logo">
+            <img src="{% static "assets/images/make-a-logo.svg" %}"
+            alt="jkmAmusements logo">
+          </a>
+
+          <div class="header-btn-group">
+            <button class="search-btn" aria-label="Search">
+              <ion-icon name="search"></ion-icon>
+            </button>
+
+            <button
+              class="nav-open-btn"
+              aria-label="Open Menu"
+              data-nav-open-btn
+            >
+              <ion-icon name="menu-outline"></ion-icon>
+            </button>
           </div>
         </div>
-    
-        <div class="header-bottom">
-          <div class="container">
-    
-            <ul class="social-list">
-    
+      </div>
+
+      <div class="header-bottom">
+        <div class="container">
+          <ul class="social-list">
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+          </ul>
+
+          <nav class="navbar" data-navbar>
+            <div class="navbar-top">
+              <a href="#" class="logo">
+                <img src="{% static "assets/images/mela side 4.jpg" %}"
+                alt="jkmAmusements logo">
+              </a>
+
+              <button
+                class="nav-close-btn"
+                aria-label="Close Menu"
+                data-nav-close-btn
+              >
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+
+            <ul class="navbar-list">
               <li>
-                <a href="#" class="social-link">
-                  <ion-icon name="logo-facebook"></ion-icon>
-                </a>
+                <a href="#home" class="navbar-link" data-nav-link>home</a>
               </li>
-    
+
               <li>
-                <a href="#" class="social-link">
-                  <ion-icon name="logo-instagram"></ion-icon>
-                </a>
+                <a href="#" class="navbar-link" data-nav-link>about us</a>
               </li>
-    
+
               <li>
-                <a href="#" class="social-link">
-                  <ion-icon name="logo-youtube"></ion-icon>
-                </a>
+                <a href="#upcomingMela" class="navbar-link" data-nav-link
+                  >Blog</a
+                >
               </li>
-    
+
+              <li>
+                <a href="#gallery" class="navbar-link" data-nav-link>gallery</a>
+              </li>
+
+              <li>
+                <a href="#contact" class="navbar-link" data-nav-link
+                  >contact us</a
+                >
+              </li>
             </ul>
-    
-            <nav class="navbar" data-navbar>
-    
-              <div class="navbar-top">
-    
-                <a href="#" class="logo">
-                  <img src="{% static "assets/images/mela side 4.jpg" %}" alt="jkmAmusements logo">
-                </a>
-    
-                <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
-                  <ion-icon name="close-outline"></ion-icon>
-                </button>
-    
-              </div>
-    
-              <ul class="navbar-list">
-    
-                <li>
-                  <a href="#home" class="navbar-link" data-nav-link>home</a>
-                </li>
-    
-                <li>
-                  <a href="#" class="navbar-link" data-nav-link>about us</a>
-                </li>
-    
-                <li>
-                  <a href="#upcomingMela" class="navbar-link" data-nav-link>Blog</a>
-                </li>
-    
-                <li>
-                  <a href="#gallery" class="navbar-link" data-nav-link>gallery</a>
-                </li>
-    
-                <li>
-                  <a href="#contact" class="navbar-link" data-nav-link>contact us</a>
-                </li>
-    
-              </ul>
-    
-            </nav>
-    
-            <button class=" Btn1 ">Book a stand</button>
-    
-          </div>
+          </nav>
+
+          <button class="Btn1">Book a stand</button>
         </div>
-    
-      </header>    
+      </div>
+    </header>
 
-      
-  <main>
-    <article>
-
-      <!-- 
+    <main>
+      <article>
+        <!-- 
         - #HERO
       -->
 
-      <section class="hero" id="home">
-        <div class="container">
+        <section class="hero" id="home">
+          <div class="container">
+            <h2 class="hero-title hero-text hero-font">
+              THE LARGEST GATHERING OF THE ENTERTAINMENT AND LEISURE INDUSTRY IN
+              THE SOUTH ASIA
+            </h2>
 
-          <h2 class=" hero-title hero-text hero-font ">THE LARGEST GATHERING OF THE ENTERTAINMENT AND LEISURE INDUSTRY IN THE SOUTH ASIA</h2>
+            <p class="hero-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Necessitatibus nam ut, libero nostrum asperiores dolore quisquam.
+              Dolor repellat voluptatem, quidem error aliquam est distinctio
+              dignissimos suscipit amet, aperiam, quae eaque.
+            </p>
 
-          <p class="hero-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nam ut, libero nostrum asperiores dolore quisquam. Dolor repellat voluptatem, quidem error aliquam est distinctio dignissimos suscipit amet, aperiam, quae eaque.
-          </p>
+            <div class="btn-group">
+              <button class="btnc">contact Us</button>
 
-          <div class="btn-group">
-            <button class="btnc">contact Us</button>
-
-            <button class="btn btn-secondary">Book a stand</button>
+              <button class="btn btn-secondary">Book a stand</button>
+            </div>
           </div>
+        </section>
 
-        </div>
-      </section>
-
-<!-- 
+        <!-- 
         - #stand SEARCH
       -->
 
-      <section class="stand-search">
-        <div class="container">
-          <form action="" class="stand-search-form">
-            <div class="input-wrapper">
-              <label for="upcoming" class="input-label"
-                >Search location*</label
-              >
+        <section class="stand-search">
+          <div class="container">
+            <form action="" class="stand-search-form">
+              <div class="input-wrapper">
+                <label for="upcoming" class="input-label"
+                  >Search location*</label
+                >
 
-              <input
-                type="text"
-                name="upcoming"
-                id="upcoming"
-                required
-                placeholder="Enter location"
-                class="input-field"
-              />
-            </div>
+                <input
+                  type="text"
+                  name="upcoming"
+                  id="upcoming"
+                  required
+                  placeholder="Enter location"
+                  class="input-field"
+                />
+              </div>
 
-            <div class="input-wrapper">
-              <label for="people" class="input-label"
-                >Number of Stands*</label
-              >
+              <div class="input-wrapper">
+                <label for="people" class="input-label"
+                  >Number of Stands*</label
+                >
 
-              <input
-                type="number"
-                name="people"
-                id="people"
-                required
-                placeholder="No.of Stands"
-                class="input-field"
-              />
-            </div>
+                <input
+                  type="number"
+                  name="people"
+                  id="people"
+                  required
+                  placeholder="No.of Stands"
+                  class="input-field"
+                />
+              </div>
 
-            <div class="input-wrapper">
-              <label for="checkin" class="input-label">Checkin Date**</label>
+              <div class="input-wrapper">
+                <label for="checkin" class="input-label">Checkin Date**</label>
 
-              <input
-                type="date"
-                name="checkin"
-                id="checkin"
-                required
-                class="input-field"
-              />
-            </div>
+                <input
+                  type="date"
+                  name="checkin"
+                  id="checkin"
+                  required
+                  class="input-field"
+                />
+              </div>
 
-            <div class="input-wrapper">
-              <label for="checkout" class="input-label">Checkout Date*</label>
+              <div class="input-wrapper">
+                <label for="checkout" class="input-label">Checkout Date*</label>
 
-              <input
-                type="date"
-                name="checkout"
-                id="checkout"
-                required
-                class="input-field"
-              />
-            </div>
+                <input
+                  type="date"
+                  name="checkout"
+                  id="checkout"
+                  required
+                  class="input-field"
+                />
+              </div>
 
-            <button type="submit" class="btn btn-secondary">
-              Inquire now
-            </button>
-          </form>
-        </div>
-      </section>
+              <button type="submit" class="btn btn-secondary">
+                Inquire now
+              </button>
+            </form>
+          </div>
+        </section>
 
-      <!-- 
+        <!-- 
       - #POPULAR
     -->
 
-      <section class="popular" id="upcoming">
-        <div class="container">
-          <p class="section-subtitle">Upcoming Mela's</p>
+        <section class="popular" id="upcoming">
+          <div class="container">
+            <p class="section-subtitle">Upcoming Mela's</p>
 
-          <h2 class="h2 section-title">Current Event</h2>
+            <h2 class="h2 section-title">Current Event</h2>
 
-          <p class="section-text">
-            "Get ready for the biggest events! 🎉 Thrills, fun, and memories
-            await. Stay tuned for updates! 🌟 #ExcitingTimesAhead"
-          </p>
+            <p class="section-text">
+              "Get ready for the biggest events! 🎉 Thrills, fun, and memories
+              await. Stay tuned for updates! 🌟 #ExcitingTimesAhead"
+            </p>
 
-          <ul class="popular-list">
-            <li>
-              <div class="popular-card">
-                <figure class="card-img">
-                  <img
-                    src=" {% static "assets/images/MelaPic1.jpg" %}"
-                    alt="Mela Pic 1"
-                    loading="lazy"
-                  />
-                </figure>
+            <ul class="popular-list">
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src=" {% static "assets/images/MelaPic1.jpg" %}"
+                    alt="Mela Pic 1" loading="lazy" />
+                  </figure>
 
-                <div class="card-content">
-                  
+                  <div class="card-content">
+                    <p class="card-subtitle">
+                      <a href="#">Delhi</a>
+                    </p>
 
-                  <p class="card-subtitle">
-                    <a href="#">Delhi</a>
-                  </p>
+                    <h3 class="h3 card-title">
+                      <a href="#">Pashchim Vihar</a>
+                    </h3>
 
-                  <h3 class="h3 card-title">
-                    <a href="#">Pashchim Vihar</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Dubai Theme Carnival Plus Fish Tunnel
-                  </p>
+                    <p class="card-text">
+                      Dubai Theme Carnival Plus Fish Tunnel
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <li>
-              <div class="popular-card">
-                <figure class="card-img">
-                  <img
-                    src=" {% static "assets/images/MelaPic2.jpg" %}"
-                    alt="MelaPic2"
-                    loading="lazy"
-                  />
-                </figure>
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src=" {% static "assets/images/MelaPic2.jpg" %}"
+                    alt="MelaPic2" loading="lazy" />
+                  </figure>
 
-                <div class="card-content">
-                  
+                  <div class="card-content">
+                    <p class="card-subtitle">
+                      <a href="#">uttar pradesh</a>
+                    </p>
 
-                  <p class="card-subtitle">
-                    <a href="#">uttar pradesh</a>
-                  </p>
+                    <h3 class="h3 card-title">
+                      <a href="#">Hockey Ground Kuferganj Rampur</a>
+                    </h3>
 
-                  <h3 class="h3 card-title">
-                    <a href="#">Hockey Ground Kuferganj Rampur</a>
-                  </h3>
-
-                  <p class="card-text">Dubai Theme Carnival</p>
+                    <p class="card-text">Dubai Theme Carnival</p>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <li>
-              <div class="popular-card">
-                <figure class="card-img">
-                  <img
-                    src=" {% static "assets/images/MelaPic3.jpg" %}"
-                    alt="ela pic 3"
-                    loading="lazy"
-                  />
-                </figure>
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img src=" {% static "assets/images/MelaPic3.jpg" %}"
+                    alt="ela pic 3" loading="lazy" />
+                  </figure>
 
-                <div class="card-content">
-                  
+                  <div class="card-content">
+                    <p class="card-subtitle">
+                      <a href="#">uttar pradesh</a>
+                    </p>
 
-                  <p class="card-subtitle">
-                    <a href="#">uttar pradesh</a>
-                  </p>
+                    <h3 class="h3 card-title">
+                      <a href="#">Near Sangam Prayagraj</a>
+                    </h3>
 
-                  <h3 class="h3 card-title">
-                    <a href="#">Near Sangam Prayagraj</a>
-                  </h3>
-
-                  <p class="card-text">Dubai Theme Carnival Fish Tunnel.</p>
+                    <p class="card-text">Dubai Theme Carnival Fish Tunnel.</p>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
 
-          <button class="btn btn-primary">More locations</button>
-        </div>
-      </section>
+            <button class="btn btn-primary">More locations</button>
+          </div>
+        </section>
 
-       <!-- 
+        <!-- 
         - #past
       -->
 
-      <section class="past" id="past">
-        <div class="container">
-          <p class="section-subtitle">Previous Events</p>
+        <section class="past" id="past">
+          <div class="container">
+            <p class="section-subtitle">Previous Events</p>
 
-          <h2 class="h2 section-title">Check our Past Events</h2>
+            <h2 class="h2 section-title">Check our Past Events</h2>
 
+            <p class="section-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perferendis pariatur ex, esse quidem maiores dolorem quisquam
+              voluptatum consectetur aperiam? Numquam inventore blanditiis eum
+              dolorem fuga quibusdam temporibus ullam neque dolores.
+            </p>
+
+            <ul class="past-list">
+              <li>
+                <div class="past-card">
+                  <figure class="card-banner">
+                    <img src=" {% static "assets/images/MelaPic3.jpg" %}"
+                    alt="Experience The Great Holiday On Beach" loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <h3 class="h3 card-title">Dubai Theme Carnival</h3>
+
+                    <p class="card-text">
+                      Laoreet, voluptatum nihil dolor esse quaerat mattis
+                      explicabo maiores, est aliquet porttitor! Eaque, cras,
+                      aspernatur.
+                    </p>
+
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+
+                          <p class="text">April 2023</p>
+                        </div>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+
+                          <p class="text">500K</p>
+                        </div>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+
+                          <p class="text">KP Ground Prayagraj</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-price">
+                    <div class="wrapper">
+                      <p class="reviews">(25K reviews)</p>
+
+                      <div class="card-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </div>
+
+                    <!-- <p class="price">
+                    ₹ 12K
+                    <span>/ per stall</span>
+                  </p> -->
+
+                    <button class="btn btn-secondary">Learn more</button>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="past-card">
+                  <figure class="card-banner">
+                    <img src=" {% static "assets/images/MelaPic2.jpg" %}"
+                    alt="Experience The Great Holiday On Beach" loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <h3 class="h3 card-title">Dubai Theme Carnival</h3>
+
+                    <p class="card-text">
+                      Laoreet, voluptatum nihil dolor esse quaerat mattis
+                      explicabo maiores, est aliquet porttitor! Eaque, cras,
+                      aspernatur.
+                    </p>
+
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+
+                          <p class="text">May 2023</p>
+                        </div>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+
+                          <p class="text">500K</p>
+                        </div>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+
+                          <p class="text">BTI Ground Satna</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-price">
+                    <div class="wrapper">
+                      <p class="reviews">(25K reviews)</p>
+
+                      <div class="card-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </div>
+
+                    <!--  <p class="price">
+                    ₹ 12K
+                    <span>/ per stall</span>
+                  </p> -->
+
+                    <button class="btn btn-secondary">Learn more</button>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="past-card">
+                  <figure class="card-banner">
+                    <img src=" {% static "assets/images/MelaPic3.jpg" %}"
+                    alt="Experience The Great Holiday On Beach" loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <h3 class="h3 card-title">Dubai Theme Carnival</h3>
+
+                    <p class="card-text">
+                      Laoreet, voluptatum nihil dolor esse quaerat mattis
+                      explicabo maiores, est aliquet porttitor! Eaque, cras,
+                      aspernatur.
+                    </p>
+
+                    <ul class="card-meta-list">
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="time"></ion-icon>
+
+                          <p class="text">june 2023</p>
+                        </div>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="people"></ion-icon>
+
+                          <p class="text">500K</p>
+                        </div>
+                      </li>
+
+                      <li class="card-meta-item">
+                        <div class="meta-box">
+                          <ion-icon name="location"></ion-icon>
+
+                          <p class="text">Rewa</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-price">
+                    <div class="wrapper">
+                      <p class="reviews">(25K reviews)</p>
+
+                      <div class="card-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </div>
+
+                    <!-- <p class="price">
+                    ₹ 12K
+                    <span>/ per stall</span>
+                  </p> -->
+
+                    <button class="btn btn-secondary">Learn more</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <button class="btn btn-primary">More Details</button>
+          </div>
+        </section>
+
+        <!-- 
+        - #GALLERY
+      -->
+
+        <section class="gallery" id="gallery">
+          <div class="container">
+            <p class="section-subtitle">Mela Gallery</p>
+
+            <h2 class="h2 section-title">Photo's From visiters</h2>
+
+            <p class="section-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
+              consectetur voluptas nobis? Enim sapiente excepturi soluta,
+              cupiditate dicta error unde, corrupti magnam doloremque, rerum
+              nihil aspernatur eveniet recusandae nisi aliquam.
+            </p>
+
+            <ul class="gallery-list">
+              <li class="gallery-item">
+                <figure class="gallery-image">
+                  <img
+                    src="./assets/images/mela side.jpg"
+                    alt="Gallery image"
+                  />
+                </figure>
+              </li>
+
+              <li class="gallery-item">
+                <figure class="gallery-image">
+                  <img
+                    src="./assets/images/mela side2.jpg"
+                    alt="Gallery image"
+                  />
+                </figure>
+              </li>
+
+              <li class="gallery-item">
+                <figure class="gallery-image">
+                  <img
+                    src="./assets/images/mela middle.jpg"
+                    alt="Gallery image"
+                  />
+                </figure>
+              </li>
+
+              <li class="gallery-item">
+                <figure class="gallery-image">
+                  <img
+                    src="./assets/images/mela side 3.jpg"
+                    alt="Gallery image"
+                  />
+                </figure>
+              </li>
+
+              <li class="gallery-item">
+                <figure class="gallery-image">
+                  <img
+                    src="./assets/images/mela side 4.jpg"
+                    alt="Gallery image"
+                  />
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 
+      - #reviews
+    -->
+
+        <section class="popular" id="upcoming">
+          <div class="container">
+            <p class="section-subtitle">Reviews</p>
+
+            <h2 class="h2 section-title">Hear from our visiters</h2>
+
+            <p class="section-text">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Accusamus debitis vero ut? Ex sed eaque illum ipsum placeat atque,
+              deleniti sit blanditiis numquam eum, perspiciatis dolore quam
+              cumque nulla? Laborum!
+            </p>
+
+            <ul class="popular-list">
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img
+                      src="./assets/images/reviewPic1.jpeg"
+                      alt="Mela Pic 1"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <p class="card-subtitle">
+                      <a href="#">Delhi</a>
+                    </p>
+
+                    <h3 class="h3 card-title">
+                      <a href="#">Priya</a>
+                    </h3>
+
+                    <p class="card-text">
+                      loved the Dubai Theme Carnival Plus Fish Tunnel
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img
+                      src="./assets/images/reviewPic1.jpeg"
+                      alt="MelaPic2"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <p class="card-subtitle">
+                      <a href="#">uttar pradesh</a>
+                    </p>
+
+                    <h3 class="h3 card-title">
+                      <a href="#">Priya</a>
+                    </h3>
+
+                    <p class="card-text">
+                      loved the Dubai Theme Carnival Plus Fish Tunnel
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="popular-card">
+                  <figure class="card-img">
+                    <img
+                      src="./assets/images/reviewPic1.jpeg"
+                      alt="ela pic 3"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <p class="card-subtitle">
+                      <a href="#">Madhya pradesh</a>
+                    </p>
+
+                    <h3 class="h3 card-title">
+                      <a href="#">priya</a>
+                    </h3>
+
+                    <p class="card-text">
+                      loved the Dubai Theme Carnival Fish Tunnel.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <button class="btn btn-primary">More Reviews</button>
+          </div>
+        </section>
+        <!-- BLOGS section -->
+
+        <section class="popular stylist-blog">
+          <p class="section-subtitle">Blogs</p>
+          <h2 class="h2 section-title">Read our Blogs</h2>
           <p class="section-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Perferendis pariatur ex, esse quidem maiores dolorem quisquam
-            voluptatum consectetur aperiam? Numquam inventore blanditiis eum
-            dolorem fuga quibusdam temporibus ullam neque dolores.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
+            debitis vero ut? Ex sed eaque illum ipsum placeat atque,
           </p>
+          <div class="carousel-container">
+            <button
+              class="carousel-control prev"
+              aria-label="Previous Blog Post"
+            >
+              &#8592;
+            </button>
+            <div class="carousel-wrapper">
+              <article class="blog-post">
+                <img
+                  src="assets/images/melaAni1.jpeg"
+                  alt="Blog post image 1"
+                />
+                <h3>Blog Post Title 1</h3>
+                <p>A short description of blog post 1. Click to read more.</p>
+                <a href="#">Read More</a>
+              </article>
+              <article class="blog-post">
+                <img
+                  src="assets/images/melaAni1.jpeg"
+                  alt="Blog post image 2"
+                />
+                <h3>Blog Post Title 2</h3>
+                <p>A short description of blog post 2. Click to read more.</p>
+                <a href="#">Read More</a>
+              </article>
+              <article class="blog-post">
+                <img
+                  src="assets/images/melaAni1.jpeg"
+                  alt="Blog post image 2"
+                />
+                <h3>Blog Post Title 2</h3>
+                <p>A short description of blog post 2. Click to read more.</p>
+                <a href="#">Read More</a>
+              </article>
+              <article class="blog-post">
+                <img
+                  src="assets/images/melaAni1.jpeg"
+                  alt="Blog post image 2"
+                />
+                <h3>Blog Post Title 2</h3>
+                <p>A short description of blog post 2. Click to read more.</p>
+                <a href="#">Read More</a>
+              </article>
+            </div>
+            <button class="carousel-control next" aria-label="Next Blog Post">
+              &#8594;
+            </button>
+          </div>
+          <div class="container">
+            <button class="btn btn-primary">More blogs</button>
+          </div>
+        </section>
+        <!-- 
+        - #CTA
+      -->
 
-          <ul class="past-list">
-            <li>
-              <div class="past-card">
-                <figure class="card-banner">
-                  <img
-                    src=" {% static "assets/images/MelaPic3.jpg" %}"
-                    alt="Experience The Great Holiday On Beach"
-                    loading="lazy"
-                  />
-                </figure>
+        <section class="cta" id="contact">
+          <div class="container">
+            <div class="cta-content">
+              <p class="section-subtitle">Call US!</p>
 
-                <div class="card-content">
-                  <h3 class="h3 card-title">Dubai Theme Carnival</h3>
+              <h2 class="h2 section-title">
+                Explore the world of Mela and experience our delightful
+                carnival. !
+              </h2>
 
-                  <p class="card-text">
-                    Laoreet, voluptatum nihil dolor esse quaerat mattis
-                    explicabo maiores, est aliquet porttitor! Eaque, cras,
-                    aspernatur.
-                  </p>
+              <p class="section-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Explicabo aut rem adipisci eveniet recusandae labore quisquam at
+                totam nesciunt exercitationem, est neque. Impedit ipsa rem omnis
+                consequatur consequuntur, nostrum inventore?
+              </p>
+            </div>
 
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
+            <button class="btn btn-secondary">Contact Us !</button>
+          </div>
+        </section>
+      </article>
+    </main>
 
-                        <p class="text">April 2023</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-
-                        <p class="text">500K</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-
-                        <p class="text">KP Ground Prayagraj</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="card-price">
-                  <div class="wrapper">
-                    <p class="reviews">(25K reviews)</p>
-
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-                  </div>
-
-                  <!-- <p class="price">
-                    ₹ 12K
-                    <span>/ per stall</span>
-                  </p> -->
-
-                  <button class="btn btn-secondary">Learn more</button>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="past-card">
-                <figure class="card-banner">
-                  <img
-                    src=" {% static "assets/images/MelaPic2.jpg" %}"
-                    alt="Experience The Great Holiday On Beach"
-                    loading="lazy"
-                  />
-                </figure>
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Dubai Theme Carnival</h3>
-
-                  <p class="card-text">
-                    Laoreet, voluptatum nihil dolor esse quaerat mattis
-                    explicabo maiores, est aliquet porttitor! Eaque, cras,
-                    aspernatur.
-                  </p>
-
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-
-                        <p class="text">May 2023</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-
-                        <p class="text">500K</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-
-                        <p class="text">BTI Ground Satna</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="card-price">
-                  <div class="wrapper">
-                    <p class="reviews">(25K reviews)</p>
-
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-                  </div>
-
-                  <!--  <p class="price">
-                    ₹ 12K
-                    <span>/ per stall</span>
-                  </p> -->
-
-                  <button class="btn btn-secondary">Learn more</button>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="past-card">
-                <figure class="card-banner">
-                  <img
-                    src=" {% static "assets/images/MelaPic3.jpg" %}"
-                    alt="Experience The Great Holiday On Beach"
-                    loading="lazy"
-                  />
-                </figure>
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Dubai Theme Carnival</h3>
-
-                  <p class="card-text">
-                    Laoreet, voluptatum nihil dolor esse quaerat mattis
-                    explicabo maiores, est aliquet porttitor! Eaque, cras,
-                    aspernatur.
-                  </p>
-
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-
-                        <p class="text">june 2023</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-
-                        <p class="text">500K</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-
-                        <p class="text">Rewa</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="card-price">
-                  <div class="wrapper">
-                    <p class="reviews">(25K reviews)</p>
-
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-                  </div>
-
-                  <!-- <p class="price">
-                    ₹ 12K
-                    <span>/ per stall</span>
-                  </p> -->
-
-                  <button class="btn btn-secondary">Learn more</button>
-                </div>
-              </div>
-            </li>
-          </ul>
-
-          <button class="btn btn-primary">More Details</button>
-        </div>
-      </section>
-
-    
-
-
-
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
