@@ -116,7 +116,7 @@ def update_profile(request):
 
 QR_CODE_DIR = 'static/tickets/'            
 TICKET_TEMPLATE_DIR = TICKET_TEMPLATE_DIR = "static/ticket_info/ticket_template.png"
-FONT_PATH = r"static\ticket_info\Roboto-Medium.ttf"
+FONT_PATH = "static/ticket_info/Roboto-Medium.ttf"
 
 
 
