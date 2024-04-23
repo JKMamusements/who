@@ -512,7 +512,7 @@ body { background: var(--white); }
 }
 
 
-.popular { padding-block: 5px; }
+.popular { padding-block: 40px; }
 
 .popular-list,
 .popular-list > li:not(:last-child) { margin-bottom: 30px; }
@@ -572,7 +572,7 @@ body { background: var(--white); }
 .popular .btn { margin-inline: auto; }
 
 
-.past { padding-block: var(--section-padding); }
+.past { padding-block: 50px; }
 
 .past-list { margin-bottom: 40px; }
 
@@ -684,7 +684,7 @@ body { background: var(--white); }
 .past .btn { margin-inline: auto; }
 
 
-.gallery { padding-block: var(--section-padding); }
+.gallery { padding-block: 20px; }
 
 .gallery-list {
   display: grid;
