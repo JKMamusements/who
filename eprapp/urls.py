@@ -9,4 +9,5 @@ urlpatterns = [
     path('profile/', views.update_profile, name='update_profile'),
     path('signin/', views.signin, name='signin'),  # Assuming you have a custom login view
     path('signout/', views.signout, name='signout'),
+    path("counter/", views.counter , name="counter")
 ]   

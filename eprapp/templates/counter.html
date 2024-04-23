@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "counter/style.css" %}">
+    <title>Document</title>
+</head>
+<body>
+  <main>
+    <div class="calculator">
+        <div class="row">
+        <form action="{% url 'counter' %}" method="post">
+          {% csrf_token  %}
+        <input type="text" id="display" value="0" name="display" readonly />
+        <button type="submit" class="button">Make</button>
+      </div>
+    </form>
+      <div class="row">
+        <button class="button" onclick="clearDisplay()">Clear</button>
+        <button
+          class="button"
+          onclick="printJS('{% static 'tickets/tickets.png' %}', 'image')"
+        >
+          Print
+        </button>
+      </div>
+
+      <div class="row">
+        <button class="button" onclick="appendToDisplay('7')">7</button>
+        <button class="button" onclick="appendToDisplay('8')">8</button>
+        <button class="button" onclick="appendToDisplay('9')">9</button>
+      </div>
+      <div class="row">
+        <button class="button" onclick="appendToDisplay('4')">4</button>
+        <button class="button" onclick="appendToDisplay('5')">5</button>
+        <button class="button" onclick="appendToDisplay('6')">6</button>
+      </div>
+      <div class="row">
+        <button class="button" onclick="appendToDisplay('1')">1</button>
+        <button class="button" onclick="appendToDisplay('2')">2</button>
+        <button class="button" onclick="appendToDisplay('3')">3</button>
+      </div>
+      <div class="row">
+        <button class="button" onclick="appendToDisplay('10')">10</button>
+        <button class="button" onclick="appendToDisplay('15')">15</button>
+        <button class="button" onclick="appendToDisplay('20')">20</button>
+      </div>
+    </div>
+
+    <h1>Total Tickets Generated: {{ total_tickets }}</h1>
+
+
+  </main>
+
+
+    <script src="{% static 'js/print.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add event listener for key presses
+        document.addEventListener("keypress", function (event) {
+            var keyPressed = event.key;
+            var displayValue = document.getElementById("display").value;
+            
+            // Handle number keys
+            if (!isNaN(keyPressed) && keyPressed !== " ") {
+                appendToDisplay(keyPressed);
+            } 
+            // Handle addition key
+            else if (keyPressed === "+") {
+                // Trigger click event on the 'Make' button
+                document.querySelector(".button").click();
+            } 
+            // Handle enter key
+            else if (event.keyCode === 13) {
+                // Trigger click event on the 'Print' button
+                document.querySelectorAll(".button")[2].click();
+            } 
+            // Handle subtraction key
+            else if (keyPressed === "-") {
+                // Trigger click event on the 'Clear' button
+                document.querySelectorAll(".button")[1].click();
+            }
+        });
+    });
+    
+    
+
+
+
+
+      function appendToDisplay(value) {
+        document.getElementById("display").value = value;
+      }
+
+      function clearDisplay() {
+        document.getElementById("display").value = "0";
+      }
+
+    </script>
+  </body>
+</html>

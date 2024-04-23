@@ -24,6 +24,15 @@ from .models import HomePageContent, Profile
 from .forms import SignUpForm, ProfileForm
 ####################################
 
+####################################
+#############  FORMS    ############
+from .utils import create_tickets
+####################################
+
+import os
+from PIL import Image
+
+
 def home(request):
     return render(request, 'index.html')
 
@@ -105,6 +114,38 @@ def update_profile(request):
         form = ProfileForm(instance=request.user.profile)
     return render(request, 'profile.html', {'form': form})
 
+QR_CODE_DIR = 'static/tickets/'            
+TICKET_TEMPLATE_DIR = r"static\ticket_info\ticket_template.png"
+FONT_PATH = r"static\ticket_info\Roboto-Medium.ttf"
 
-            
+
+
+def counter(request):
+    total_count = 0
+    start_number = total_count
+    if request.method == "POST":
+        num = request.POST.get('display')
+        num = int(num)
+        if num == 0:
+            # Include the CSRF token when rendering the template
+            return render(request, "counter.html", {'csrf_token': request.POST.get('csrfmiddlewaretoken')})
+        
+        margin = 20
+        os.makedirs(QR_CODE_DIR, exist_ok=True)
+        
+        ticket_template = Image.open(TICKET_TEMPLATE_DIR)       
+        canvas = create_tickets(num, start_number , ticket_template, margin =margin, data_prefix="JKM2024",font_path=FONT_PATH)
+        
+        canvas.save(os.path.join(QR_CODE_DIR, "tickets.png"))
+        
+        total_count += 1
+        ticket_count=0
+        ticket_count += num
+        
+        return redirect('counter')
+
+    info = {"total_tickets": total_count}
+    return render(request, "counter.html", info)
+
+
 
