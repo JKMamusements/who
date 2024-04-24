@@ -1,0 +1,265 @@
+
+:root {
+
+
+  --united-nations-blue: hsl(214, 56%, 58%);
+  --bright-navy-blue: hsl(214, 57%, 51%);
+  --spanish-gray: hsl(0, 0%, 60%);
+  --black-coral: hsl(225, 8%, 42%);
+  --off-whiteyellow:hsl(52, 17%, 91%);
+  --oxford-blue: hsl(208, 97%, 12%);
+  --yale-blue: hsl(214, 72%, 33%);
+  --blue-ncs: hsl(197, 100%, 36%);
+  --gunmetal: hsl(206, 34%, 20%);
+  --gainsboro: hsl(0, 0%, 88%);
+  --cultured: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --onyx: hsl(0, 0%, 25%);
+  --jet: hsl(0, 0%, 20%);
+  --red: hsl(0, 86%, 51%);
+  --dark-red:rgb(174, 45, 82);
+  --golden : #FFD700;
+ 
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-montserrat: "Montserrat", sans-serif;
+
+  --fs-1: calc(20px + 3.5vw);
+  --fs-2: calc(18px + 1.6vw);
+  --fs-2-1: calc(18px + 0.8vw);
+  --fs-3: calc(16px + 0.45vw);
+  --fs-3-1: 17px;
+  --fs-4: 15px;
+  --fs-5: 14px;
+  --fs-6: 13px;
+  --fs-7: 12px;
+  --fs-8: 11px;
+
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+
+ 
+  --transition: 0.25s ease-in-out;
+
+
+
+  --section-padding: 60px;
+
+
+  --radius-15: 15px;
+  --radius-25: 25px;
+
+}
+
+
+
+
+/*  #RESET */
+
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a { text-decoration: none; }
+
+a,
+img,
+span,
+input,
+label,
+
+
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+button { cursor: pointer; }
+
+input { width: 100%; }
+
+ion-icon { pointer-events: none; }
+
+html {
+  font-family: var(--ff-poppins);
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styles for header */
+header {
+  background-color: #ffffff;
+  padding-top: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+
+.body{
+  background-color: #F9F8F4;
+}
+
+/* Styles for main content */
+main {
+  flex: 1;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Styles for article */
+article {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem; /* Increased font size */
+}
+
+/* Styles for button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+}
+
+
+/* Fancy heading style */
+.fancy-heading {
+  font-size: 3rem; /* Adjust size as needed */
+  font-weight: bold;
+  text-align: center; /* Center the heading */
+  color: #333; /* Adjust color as desired */
+}
+
+/* Style for meta information section */
+.meta-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem; /* Adjust spacing as needed */
+  color: #888; /* Gray color */
+}
+
+.meta-info span {
+  margin: 0 0.5rem; /* Adjust spacing between elements */
+}
+
+/* Styles for circular buttons */
+.circle-button {
+  border-radius: 50%; /* Make button circular */
+  width: 50px; /* Adjust button size as needed */
+  height: 50px;
+  background-color: #c5c8cb; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Show pointer on hover */
+  margin: 0 10px; /* Adjust margin between buttons */
+}
+
+.circle-button ion-icon {
+  align-items:end;
+  font-size: 20px; 
+}
+
+
+.circle-button:hover {
+  background-color: #4c4d4e; /* Button background color on hover */
+}
+
+
+/* footer */
+
+
+/*-----------------------------------*\
+ * #FOOTER
+\*-----------------------------------*/
+
+
+
+
+
+
+
+
+
+.footer-bottom {
+  --gunmetal: hsl(205, 36%, 17%);
+  background: var(--black);
+  padding-block: 20px;
+  text-align: center;
+  border-top: 2px solid var(--red);
+}
+
+.copyright {
+  color: var(--gainsboro);
+  font-size: var(--fs-6);
+  margin-bottom: 10px;
+}
+
+.copyright a {
+  color: inherit;
+  display: inline-block;
+}
+
+.copyright a:is(:hover, :focus) { color: var(--white); }
+
+.footer-bottom-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 21px;
+}
+
+.footer-bottom-list > li { position: relative; }
+
+.footer-bottom-list > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -10px;
+  bottom: 3px;
+  width: 1px;
+  background: hsla(0, 88%, 49%, 0.83);
+}
+
+.footer-bottom-link {
+  color: var(--gainsboro);
+  font-size: var(--fs-7);
+  transition: var(--transition);
+}
+
+.footer-bottom-link:is(:hover, :focus) { color: var(--white); }
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+.allArticle{
+  text-align: center;
+  
+}
+
+}
