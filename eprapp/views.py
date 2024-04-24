@@ -36,6 +36,10 @@ from PIL import Image
 def home(request):
     return render(request, 'index.html')
 
+
+def Blogs(request):
+    return render(request, 'Blogs.html')
+
 def index(request):
     # Fetch the content from the database
     home_page_content = HomePageContent.objects.first()  # Returns None if no entry exists
