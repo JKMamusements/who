@@ -22,12 +22,9 @@
     </form>
       <div class="row">
         <button class="button" onclick="clearDisplay()">Clear</button>
-        <button
-          class="button"
-          onclick="printJS('{% static 'tickets/tickets.png' %}', 'image')"
-        >
-          Print
-        </button>
+
+        <button class="button" onclick="printJS('{% static 'tickets/' %}{{ username }}.png', 'image')">Print</button>
+
       </div>
 
       <div class="row">

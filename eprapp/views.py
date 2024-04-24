@@ -15,7 +15,7 @@ from django.contrib.auth.forms import AuthenticationForm
 
 ####################################
 ############ models ################ 
-from .models import HomePageContent, Profile
+from .models import HomePageContent, Profile, Tickets, UserTicketTotal
 ####################################
 
 
@@ -31,6 +31,7 @@ from .utils import create_tickets
 
 import os
 from PIL import Image
+from datetime import date
 
 
 def home(request):
@@ -80,8 +81,6 @@ def signout(request):
 
 
 
-from django.contrib import messages
-from django.shortcuts import redirect
 
 def user_dashboard(request):
     if request.user.is_anonymous:
@@ -127,12 +126,14 @@ FONT_PATH = "static/ticket_info/Roboto-Medium.ttf"
 def counter(request):
     if request.user.is_anonymous:
         return redirect('signin')
+    
     username = request.user.get_username()
-    total_count = 0
+    total_count = 0  # This should ideally be retrieved from a persistent storage like a database
     start_number = total_count
+    
     if request.method == "POST":
-        num = request.POST.get('display')
-        num = int(num)
+        num = int(request.POST.get('display', 0))
+        
         if num == 0:
             # Include the CSRF token when rendering the template
             return render(request, "counter.html", {'csrf_token': request.POST.get('csrfmiddlewaretoken')})
@@ -141,17 +142,21 @@ def counter(request):
         os.makedirs(QR_CODE_DIR, exist_ok=True)
         
         ticket_template = Image.open(TICKET_TEMPLATE_DIR)       
-        canvas = create_tickets(num, start_number , ticket_template, margin =margin, data_prefix="JKM2024",font_path=FONT_PATH)
+        canvas = create_tickets(num, start_number, ticket_template, margin=margin, data_prefix="JKM2024", font_path=FONT_PATH)
         
-        canvas.save(os.path.join(QR_CODE_DIR, "tickets.png"))
+        # Save the image with the username as part of the filename
+        image_filename = f"{username}.png"
+        image_path = os.path.join(QR_CODE_DIR, image_filename)
+        canvas.save(image_path)
         
-        total_count += 1
-        ticket_count=0
-        ticket_count += num
-        
+        Tickets.objects.create(user=request.user, num_tickets_genrated=num)
+        user_ticket_total, created = UserTicketTotal.objects.get_or_create(user=request.user, date=date.today())
+        user_ticket_total.total_tickets_genrated += num
+        user_ticket_total.save()
+
         return redirect('counter')
 
-    info = { "username": username,"total_tickets": total_count}
+    info = {"username": username, "total_tickets": total_count}
     return render(request, "counter.html", info)
 
 

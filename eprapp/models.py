@@ -19,4 +19,14 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username    
 
+class Tickets(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    num_tickets_genrated = models.IntegerField()
+    generated_at = models.DateTimeField(auto_now_add=True)
+
+class UserTicketTotal(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    total_tickets_genrated = models.IntegerField(default=0)
+    date = models.DateField(auto_now_add=True)
+
 
