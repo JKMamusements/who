@@ -103,9 +103,7 @@
               </li>
 
               <li>
-                <a href="#upcomingMela" class="navbar-link" data-nav-link
-                  >Blog</a
-                >
+                <a href="#blogs" class="navbar-link" data-nav-link>Blog</a>
               </li>
 
               <li>
@@ -544,7 +542,7 @@
           <div class="container">
             <p class="section-subtitle">Mela Gallery</p>
 
-            <h2 class="h2 section-title">Photo's From visiters</h2>
+            <h2 class="h2 section-title">Photo's From visitor' s</h2>
 
             <p class="section-text">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
@@ -600,7 +598,7 @@
           <div class="container">
             <p class="section-subtitle">Reviews</p>
 
-            <h2 class="h2 section-title">Hear from our visiters</h2>
+            <h2 class="h2 section-title">Hear from our visitor's</h2>
 
             <p class="section-text">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -709,10 +707,10 @@
         </section>
         <!-- BLOGS section -->
 
-        <section class="popular stylist-blog">
+        <section class="popular stylist-blog" id="blogs">
           <p class="section-subtitle">Blogs</p>
           <h2 class="h2 section-title">Read our Blogs</h2>
-          <p class="section-text">
+          <p class="section-text blog-text">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
             debitis vero ut? Ex sed eaque illum ipsum placeat atque,
           </p>
@@ -721,44 +719,52 @@
               class="carousel-control prev"
               aria-label="Previous Blog Post"
             >
-              &#8592;
+              <ion-icon name="caret-back-outline"></ion-icon>
             </button>
             <div class="carousel-wrapper">
               <article class="blog-post">
                 <img src=" {% static "assets/images/melaAni1.jpeg" %}" alt="Blog
                 post image 1" />
-                <h3>Blog Post Title 1</h3>
-                <p>A short description of blog post 1. Click to read more.</p>
+                <h3 class="blog-heading">Blog Post Title 2</h3>
+                <p class="blog-text">
+                  A short description of blog post 2. Click to read more.
+                </p>
                 <a href="#">Read More</a>
               </article>
               <article class="blog-post">
                 <img src=" {% static "assets/images/melaAni1.jpeg" %}" alt="Blog
                 post image 2" />
-                <h3>Blog Post Title 2</h3>
-                <p>A short description of blog post 2. Click to read more.</p>
+                <h3 class="blog-heading">Blog Post Title 2</h3>
+                <p class="blog-text">
+                  A short description of blog post 2. Click to read more.
+                </p>
                 <a href="#">Read More</a>
               </article>
               <article class="blog-post">
                 <img src=" {% static "assets/images/melaAni1.jpeg" %}" alt="Blog
                 post image 2" />
-                <h3>Blog Post Title 2</h3>
-                <p>A short description of blog post 2. Click to read more.</p>
+                <h3 class="blog-heading">Blog Post Title 2</h3>
+                <p class="blog-text">
+                  A short description of blog post 2. Click to read more.
+                </p>
                 <a href="#">Read More</a>
               </article>
               <article class="blog-post">
                 <img src=" {% static "assets/images/melaAni1.jpeg" %}" alt="Blog
                 post image 2" />
-                <h3>Blog Post Title 2</h3>
-                <p>A short description of blog post 2. Click to read more.</p>
+                <h3 class="blog-heading">Blog Post Title 2</h3>
+                <p class="blog-text">
+                  A short description of blog post 2. Click to read more.
+                </p>
                 <a href="#">Read More</a>
               </article>
             </div>
             <button class="carousel-control next" aria-label="Next Blog Post">
-              &#8594;
+              <ion-icon name="caret-forward-outline"></ion-icon>
             </button>
           </div>
           <div class="container">
-            <button class="btn btn-primary">More blogs</button>
+            <button class="btn btn-secondary">More blogs</button>
           </div>
         </section>
         <!-- 
