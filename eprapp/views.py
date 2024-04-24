@@ -125,6 +125,9 @@ FONT_PATH = "static/ticket_info/Roboto-Medium.ttf"
 
 
 def counter(request):
+    if request.user.is_anonymous:
+        return redirect('signin')
+    username = request.user.get_username()
     total_count = 0
     start_number = total_count
     if request.method == "POST":
@@ -148,7 +151,7 @@ def counter(request):
         
         return redirect('counter')
 
-    info = {"total_tickets": total_count}
+    info = { "username": username,"total_tickets": total_count}
     return render(request, "counter.html", info)
 
 
