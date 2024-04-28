@@ -33,6 +33,8 @@ import os
 from PIL import Image
 from datetime import date
 
+from django.utils import timezone
+
 
 def home(request):
     return render(request, 'index.html')
@@ -122,11 +124,6 @@ TICKET_TEMPLATE_DIR = TICKET_TEMPLATE_DIR = "static/ticket_info/ticket_template.
 FONT_PATH = "static/ticket_info/Roboto-Medium.ttf"
 
 
-from django.utils.timezone import now
-from django.core.exceptions import ObjectDoesNotExist
-
-from django.utils import timezone
-from .models import Tickets, UserTicketTotal
 
 def counter(request):
     if request.user.is_anonymous:
@@ -173,11 +170,9 @@ def counter(request):
 
 
 def view_tickets(request):
+    user_ticket_totals = UserTicketTotal.objects.all()
     tickets = Tickets.objects.all()
-    for ticket in tickets:
-        # Convert generated_at time to Indian time
-        ticket.generated_at = ticket.generated_at.astimezone(timezone.get_current_timezone())
-    return render(request, 'tickets.html', {'tickets': tickets})
+    return render(request, 'tickets.html', {'user_ticket_totals': user_ticket_totals, "tickets": tickets})
 
 
 

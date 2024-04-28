@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from datetime import date
 
 class HomePageContent(models.Model):
     content = models.TextField()
@@ -25,6 +26,7 @@ class Tickets(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     num_tickets_generated = models.IntegerField()
     generated_at = models.DateTimeField(default=timezone.now)  # Store the time in UTC by default
+    generated_date = models.DateField(default=date.today) 
 
 class UserTicketTotal(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

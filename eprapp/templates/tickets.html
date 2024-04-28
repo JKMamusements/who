@@ -1,3 +1,50 @@
-{% for ticket in tickets %}
-    <p>Ticket generated at: {{ ticket.generated_at|date:"D d M Y H:i:s" }}</p>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Ticket Total Table</title>
+</head>
+<body>
+    <h1>User Ticket Total Table</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Total Tickets Generated</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user_ticket_total in user_ticket_totals %}
+            <tr>
+                <td>{{ user_ticket_total.user }}</td>
+                <td>{{ user_ticket_total.total_tickets_generated }}</td>
+                <td>{{ user_ticket_total.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Total Tickets Generated</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ticket in tickets %}
+            <tr>
+                <td>{{ ticket.user }}</td>
+                <td>{{ ticket.num_tickets_generated }}</td>
+                <td>{{ ticket.generated_at }}</td>
+                <td>{{ ticket.generated_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
