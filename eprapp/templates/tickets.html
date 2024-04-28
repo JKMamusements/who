@@ -1,0 +1,3 @@
+{% for ticket in tickets %}
+    <p>Ticket generated at: {{ ticket.generated_at|date:"D d M Y H:i:s" }}</p>
+{% endfor %}

@@ -103,11 +103,11 @@ def create_tickets(number, start_number, ticket_template, margin=10, data_prefix
     current_datetime = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
     formatted_date = current_datetime.strftime("%d-%m-%Y")
     formatted_time = current_datetime.strftime("%H:%M:%S")
-    location = "Gurugram"
+    location = "Faridabad"
 
     text_info.append((f"{formatted_date}", (410, 550)))
     text_info.append((f"{formatted_time}", (410, 620)))
-    text_info.append(("Rs.150", (410, 690)))
+    text_info.append(("Rs.100", (410, 690)))
     text_info.append((f"{location}", (410, 760)))
 
     # Create the canvas
