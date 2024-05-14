@@ -40,11 +40,13 @@
                 <td>{{ ticket.user }}</td>
                 <td>{{ ticket.num_tickets_generated }}</td>
                 <td>{{ ticket.generated_at }}</td>
-                <td>{{ ticket.generated_date }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+
+    Today's Total Tickets: {{ today_data.num_tickets_generated__sum }}
+
 
 </body>
 </html>
