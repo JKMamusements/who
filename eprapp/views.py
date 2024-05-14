@@ -33,7 +33,13 @@ import os
 from PIL import Image
 from datetime import date, datetime
 
+import pytz
+
 from django.utils import timezone
+
+
+ist_timezone = pytz.timezone('Asia/Kolkata')
+
 
 
 def home(request):
@@ -123,6 +129,7 @@ FONT_PATH = "static/ticket_info/Roboto-Medium.ttf"
 
 
 def counter(request):
+    
     if request.user.is_anonymous:
         return redirect('signin')
     
