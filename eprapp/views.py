@@ -33,12 +33,8 @@ import os
 from PIL import Image
 from datetime import date, datetime
 
-#import pytz
 
 from django.utils import timezone
-
-
-#ist_timezone = pytz.timezone('Asia/Kolkata')
 
 
 
