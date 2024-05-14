@@ -24,11 +24,12 @@ class Profile(models.Model):
 class Tickets(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     num_tickets_generated = models.IntegerField()
-    generated_at = models.DateTimeField(default=timezone.now)  # Store the time in UTC by default
-#    generated_date = models.DateField(default=date.today) 
+    generated_at = models.TimeField(default=timezone.now)  # Store the time in UTC by default
+    generated_date = models.DateField(default=date.today) 
 
 class UserTicketTotal(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     total_tickets_generated = models.IntegerField(default=0)
-    date = models.DateField(default=timezone.now)  # Store the date in UTC by default
-    
+    date = models.DateField(default=date.today)  # Store the date in UTC by default
+    class Meta:
+        unique_together = ('user', 'date')

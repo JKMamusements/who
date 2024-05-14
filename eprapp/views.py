@@ -26,7 +26,7 @@ from .forms import SignUpForm, ProfileForm
 
 ####################################
 #############  FORMS    ############
-from .utils import create_tickets
+from .utils import create_tickets, generate_single_pass
 ####################################
 
 import os
@@ -122,8 +122,74 @@ TICKET_TEMPLATE_DIR = TICKET_TEMPLATE_DIR = "static/ticket_info/ticket_template.
 FONT_PATH = "static/ticket_info/Roboto-Medium.ttf"
 
 
-
 def counter(request):
+    if request.user.is_anonymous:
+        return redirect('signin')
+    
+    username = request.user.get_username()
+    
+    if request.method == "POST":
+        num = int(request.POST.get('display', 0))
+        
+        if num == 0:
+            return render(request, "counter.html", {'csrf_token': request.POST.get('csrfmiddlewaretoken')})
+        
+        # Retrieve total tickets count for the user
+        user_ticket_total, created = UserTicketTotal.objects.get_or_create(
+            user=request.user,
+        )
+        total_tickets = user_ticket_total.total_tickets_generated
+        
+        date_now = datetime.now()
+        time_now = datetime.now().time()
+        
+        info = {
+            "username": username,
+            "date": date_now,
+            "time": time_now,
+            "total_tickets": total_tickets,
+            "tickets_in_pass": num,
+            "location": "Faridabad",
+            "price": "100"  # This can be modified as needed
+        }
+        
+        # Define text info dictionary
+        text_info = {
+            f"{info['date'].strftime('%d-%m-%Y')}": (410, 550),
+            f"{info['time'].strftime('%H:%M:%S')}": (410, 630),
+            f"{info['location']}": (410, 780),
+            f"{info['price']}": (410, 700),
+            f"Tickets in this pass: {info['tickets_in_pass']}": (210, 480)
+        }
+        
+        os.makedirs(QR_CODE_DIR, exist_ok=True)
+        
+        ticket_template = Image.open(TICKET_TEMPLATE_DIR)
+        pass_image = generate_single_pass(info, text_info, ticket_template, font_path=FONT_PATH)
+
+        # Save the image with the username as part of the filename
+        image_filename = f"{username}.png"
+        image_path = os.path.join(QR_CODE_DIR, image_filename)
+        pass_image.save(image_path)
+        
+        # Create Tickets instances
+        Tickets.objects.create(user=request.user, num_tickets_generated=num, generated_at=timezone.now())
+        
+        # Update UserTicketTotal instance
+        user_ticket_total.total_tickets_generated += num
+        user_ticket_total.save()
+
+        return redirect('counter')
+
+    # Retrieve total tickets count for the user
+    user_ticket_total, created = UserTicketTotal.objects.get_or_create(user=request.user)
+    total_count = user_ticket_total.total_tickets_generated
+    
+    info = {"username": username, "total_tickets": total_count}
+    return render(request, "counter.html", info)
+
+
+def counter2(request):
     if request.user.is_anonymous:
         return redirect('signin')
     
@@ -165,6 +231,9 @@ def counter(request):
     
     info = {"username": username, "total_tickets": total_count}
     return render(request, "counter.html", info)
+
+
+
 
 
 from django.db.models import Sum

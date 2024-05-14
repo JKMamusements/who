@@ -156,7 +156,65 @@ def create_tickets(number, start_number, ticket_template, margin=10, data_prefix
 
 
 
+def generate_single_pass(info, text_info, ticket_template, font_path="JKMapp/static/Roboto-Medium.ttf"):
+    """
+    Generate a single pass with QR code and text information.
 
+    Args:
+        info (dict): Dictionary containing user information and ticket details.
+            Expected keys: 'username', 'date', 'time', 'total_tickets', 'tickets_in_pass'
+        text_info (dict): Dictionary containing text information and their positions.
+            Keys are text strings and values are tuples with (x, y) positions.
+        ticket_template (Image): An Image object representing the ticket template.
+        font_path (str): Path to the font file.
+
+    Returns:
+        Image: The generated pass image.
+    """
+    # Define variables
+    font_size = 60
+    color = (255, 0, 0)
+
+    # Extract information from the dictionary
+    username = info['username']
+    date = info['date']
+    time = info['time']
+    total_tickets = info['total_tickets']
+    tickets_in_pass = info['tickets_in_pass']
+    location = info.get('location', 'Gwalior')  # Default to Faridabad if not provided
+
+    # Format date and time
+    formatted_date = date.strftime("%d-%m-%Y")
+    formatted_time = time.strftime("%H:%M:%S")
+
+    # Create the pass
+    ticket_template_copy = ticket_template.copy()
+
+    # Generate QR code
+    qr = qrcode.QRCode(
+        version=1,
+        box_size=15,
+        border=4,
+    )
+    qr_data = f'{username}_{date.strftime("%d%m")}_{total_tickets}_{tickets_in_pass}'
+    qr.add_data(qr_data)
+    qr.make(fit=True)
+    qr_img = qr.make_image(fill_color="black", back_color="white")
+
+    # Position and paste the QR code onto the ticket template copy
+    qr_width, qr_height = qr_img.size
+    qr_x_offset = (ticket_template_copy.width) // 2  # Center the QR code horizontally
+    qr_y_offset = 0  # Adjust this value as needed
+    ticket_template_copy.paste(qr_img, (qr_x_offset, qr_y_offset))
+
+    # Draw text on the ticket template copy
+    draw = ImageDraw.Draw(ticket_template_copy)
+    font = ImageFont.truetype(font_path, size=font_size)
+    for text, position in text_info.items():
+        draw.text(position, text, fill=color, font=font)
+
+    # Return the ticket
+    return ticket_template_copy
 
 
 
