@@ -9,6 +9,9 @@ CSRF_TRUSTED_ORIGINS = ["*", "https://www.jkmevents.in"]
 DEBUG = True
 
 
+
+
+
 # WhiteNoise configuration
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -30,3 +33,13 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'Asia/Kolkata'
+
+USE_I18N = True
+
+USE_TZ = True
