@@ -246,11 +246,7 @@ def view_tickets(request):
     today = date.today()
 
     user_ticket_totals = UserTicketTotal.objects.all()
-    tickets = Tickets.objects.filter(generated_at__gte = today)
-    today_data = Tickets.objects.filter(generated_at__gte=today).aggregate(Sum('num_tickets_generated'))
-    user_tickets_today = Tickets.objects.filter(generated_at__date=today).values('user').annotate(total_tickets=Sum('num_tickets_generated'))
-   # trying = Tickets.objects.raw("SELECT * FROM tickets")
-    return render(request, 'tickets.html', {'user_ticket_totals': user_ticket_totals, 'tickets': tickets, 'today_data': today_data, "user_tickets_today": user_tickets_today, })
+    return render(request, 'tickets.html', {'user_ticket_totals': user_ticket_totals,  })
 
 
 
