@@ -103,7 +103,7 @@ def create_tickets(number, start_number, ticket_template, margin=10, data_prefix
     current_datetime = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
     formatted_date = current_datetime.strftime("%d-%m-%Y")
     formatted_time = current_datetime.strftime("%H:%M:%S")
-    location = "Faridabad"
+    location = "Ghaziabad"
 
     text_info.append((f"{formatted_date}", (410, 550)))
     text_info.append((f"{formatted_time}", (410, 620)))
@@ -181,7 +181,7 @@ def generate_single_pass(info, text_info, ticket_template, font_path="JKMapp/sta
     time = info['time']
     total_tickets = info['total_tickets']
     tickets_in_pass = info['tickets_in_pass']
-    location = info.get('location', 'Gwalior')  # Default to Faridabad if not provided
+    location = info.get('location', 'Ghaziabad')  # Default to Faridabad if not provided
 
     # Format date and time
     formatted_date = date.strftime("%d-%m-%Y")
