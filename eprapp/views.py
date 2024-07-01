@@ -152,7 +152,7 @@ def counter(request):
             "time": time_now,
             "total_tickets": total_tickets,
             "tickets_in_pass": num,
-            "location": "Faridabad",
+            "location": "Ghaziabad",
             "price": "100"  # This can be modified as needed
         }
         
